@@ -27,7 +27,7 @@ $article = $articleDb->getArticleById($_GET['id']);
         echo "</pre>";
            if ($_POST) {
 
-                $article->updateArticle($_POST);
+               $article->updateArticle($_POST, $_GET['id']);
             }
         ?>
 

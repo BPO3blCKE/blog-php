@@ -85,7 +85,7 @@ class Article
     {
         if ($this->connect) {
             $sql = "UPDATE article 
-              SET title = '" . $post['title'] . "', content = '" . $post['content'] . "' 
+              SET title = '" . $post['title'] . "', sub_title = '" . $post['sub_title'] . "', content = '" . $post['content'] . "' 
               WHERE id = $id";
 
             return $this->connect->prepare($sql)->execute(PDO::FETCH_OBJ);
