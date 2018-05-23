@@ -3,6 +3,7 @@ require_once 'header.php';
 use Classes\Article;
 use Classes\ConnectDb;
 $article = new Article(ConnectDb::getConnect());
+
 ?>
 
 
@@ -56,7 +57,7 @@ $article = new Article(ConnectDb::getConnect());
                                 <td><?= $article->created_at ?></td>
                                 <td>
                                     <a href="/admin/edit_article.php?id=<?=$article->id?>">Edit</a><br>
-                                    <a href="javascript:void(0)">Delete</a>
+                                    <a href="/admin/delete_article.php?id=<?=$article->id?>">Delete</a>
                                 </td>
                             </tr>
                             <?php endforeach; ?>

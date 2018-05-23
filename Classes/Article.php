@@ -67,6 +67,7 @@ class Article
 
         return false;
     }
+
     public function getArticleById($id)
     {
         if ($this->connect) {
@@ -86,7 +87,8 @@ class Article
         if ($this->connect) {
             $sql = "UPDATE article 
               SET title = '" . $post['title'] . "', sub_title = '" . $post['sub_title'] . "', content = '" . $post['content'] . "' 
-              WHERE id = $id";
+              WHERE id = '$id'
+              ";
 
             return $this->connect->prepare($sql)->execute();
         }

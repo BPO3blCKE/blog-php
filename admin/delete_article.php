@@ -23,10 +23,13 @@ $article = $articleDb->getArticleById($_GET['id']);
         </ol>
         <?php
 
-           if ($_POST) {
 
-               $updateArticle = $articleDb->updateArticle($_POST, $_GET['id']);
-            }
+        if ($_POST) {
+
+
+
+            $articleDb->deleteArticle(($_POST['id']));
+        }
         ?>
 
         <!-- Example DataTables Card-->
@@ -48,7 +51,7 @@ $article = $articleDb->getArticleById($_GET['id']);
                         <textarea rows="10" cols="40" name="content"><?=$article->content?></textarea>
                     </label>
                     <br>
-                    <button>Send</button>
+                    <button>Delete</button>
                 </form>
             </div>
         </div>
