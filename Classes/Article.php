@@ -88,7 +88,7 @@ class Article
               SET title = '" . $post['title'] . "', sub_title = '" . $post['sub_title'] . "', content = '" . $post['content'] . "' 
               WHERE id = $id";
 
-            return $this->connect->prepare($sql)->execute(PDO::FETCH_OBJ);
+            return $this->connect->prepare($sql)->execute();
         }
 
         return false;

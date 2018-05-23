@@ -22,19 +22,17 @@ $article = $articleDb->getArticleById($_GET['id']);
             <li class="breadcrumb-item active">Add new</li>
         </ol>
         <?php
-        echo "<pre>";
-        print_r($article);
-        echo "</pre>";
+
            if ($_POST) {
 
-               $article->updateArticle($_POST, $_GET['id']);
+               $articleDb->updateArticle($_POST, $_GET['id']);
             }
         ?>
 
         <!-- Example DataTables Card-->
         <div class="row">
             <div class="col-12">
-                <form method="POST" action="">
+                <form method="POST" action="edit_article.php">
                     <label>
                         Title: <br>
                         <input name="title" type="text" value="<?=$article->title?>" placeholder="" />
@@ -56,5 +54,6 @@ $article = $articleDb->getArticleById($_GET['id']);
         </div>
     </div>
     <!-- /.container-fluid-->
+
 
 <?php require_once 'footer.php' ?>
